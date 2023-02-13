@@ -8,7 +8,11 @@
 
     <link rel="stylesheet" media="all" href="{% static 'main.css' %}" />
 
+    {% if title %}
+    <title>{{ title }} - Josh's Website</title>
+    {% else %}
     <title>Josh's Website</title>
+    {% endif %}
 </head>
 <body>
     {% block content %}
