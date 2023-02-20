@@ -4,4 +4,26 @@
 
 <h1>Home Page</h1>
 
+<div class="main-container">
+    <h2>Posts</h2>
+
+    <div class="post-button">
+        <a href="{% url 'create-post' %}" class="post-link">Post</a>
+    </div>
+
+    {% for post in posts %}
+    <div class="post-container">
+        {% if post.user %}
+        <h4>@{{ post.user }}</h4>
+        {% else %}
+        <h4>Unknown</h4>
+        {% endif %}
+
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <a href="/post/{{post.id}}" class="viewmore-button">View More</a>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock content %}

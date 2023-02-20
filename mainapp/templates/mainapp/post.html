@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="main-container">
+    <a href="{% url 'home' %}" class="goback-button">Go Back</a>
+    {% if post.user %}
+    <h1 class="user">@{{ post.user }}</h1>
+        {% else %}
+        <h1 class="user">Unknown</h1>
+        {% endif %}
+    <h2 class="bold">{{ post.title }}</h2>
+    <p>{{ post.description }}</p>
+</div>
+
+{% endblock content %}
